@@ -1,3 +1,0 @@
-# APITestProject
-基于excel模板的接口自动化脚本
-通过读取excel模板执行接口自动化
