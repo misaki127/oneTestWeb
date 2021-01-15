@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="width: 100%;text-align: center;height: 1500px;background: azure;">
+    <h1 style="background: aliceblue;align-content: center;width: 100%;height: 100px">接口自动化测试</h1>
+<h2>上传测试用例</h2>
+<p>（如需要上传码文件，请先上传码文件，再上传测试用例）</p>
+	<form enctype="multipart/form-data"
+	      action="/uploadFile/" method="POST" style="text-align: left;margin-left: 45%">
+
+		<input type="file" name="upload_file" size="30px">
+		<br/>
+		<input type="submit" name="btn_upload" size="30px" value="提交测试用例">
+
+<!--        {% csrf_token %}-->
+	</form>
+<h2>上传码文件</h2>
+    <form enctype="multipart/form-data" action="/getCodeFile/" method="POST" style="text-align: left;margin-left: 45%">
+        <input type="file" name="code_file" size="25px">
+        <br/>
+        <input type="submit" name="btn_code" size="25px" value="提交码文件">
+    </form>
+
+    <h2><a href="/download/" style="color:blue;font-size: 14px" >下载模板</a></h2>
+    <h2><a href="/download/use/" style="color:blue;font-size: 14px" >下载使用教程</a></h2>
+    <h1>已上传测试用例文件：</h1>
+    <ul style="text-align: left;margin-left: 45%">
+{%  for x in MkdirData %}
+        <li>{{ x }}</li>
+        {% endfor %}
+        </ul>
+    <ul style="text-align: left;margin-left: 45%">
+    <h1>已上传码文件：</h1>
+{%  for p in codeFile %}
+        <li>{{ p }}</li>
+        {% endfor %}
+        </ul>
+</div>
+</body>
+</html>

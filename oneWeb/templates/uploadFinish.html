@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传文件结束页</title>
+</head>
+<body>
+<div style="width: 100%;text-align: center;height: 1500px;background: azure;">
+<h1>上传完成！</h1><br>
+
+<form action="/runTest/" method="post">
+    <input type="submit" name="run" value="执行测试用例">
+</form>
+<p>（点击提交按钮，执行测试用例.）</p>
+<h3><a href="/upload/">返回</a></h3>
+    <h1>已上传文件：</h1>
+    <ul style="text-align: center;margin-left: 40%;margin-right: 40%">
+{%  for x in MkdirData %}
+        <li>{{ x }}</li>
+        {% endfor %}
+        </ul>
+</div>
+</body>
+</html>
